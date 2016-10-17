@@ -1,0 +1,2 @@
+web: rails server --binding=0.0.0.0 --port=5000
+client: sh -c 'rm app/assets/webpack/* || true && cd client && npm run build:development'

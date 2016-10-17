@@ -8,10 +8,10 @@ services:
     environment:
       - PGDATA=/postgresql
     volumes:
-      - ./tmp/postgresql:/postgresql
+      - ./data/postgresql:/postgresql
   web:
     build: .
-    command: rails server --binding=0.0.0.0 --port=5000
+    command: foreman start -f Procfile.dev
     ports:
       - "5000:5000"
     volumes:
