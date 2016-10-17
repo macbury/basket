@@ -1,0 +1,20 @@
+# Only for development and testing!!!!
+version: '2'
+services:
+  database:
+    image: postgres:9.3
+    ports:
+      - "5432"
+    environment:
+      - PGDATA=/postgresql
+    volumes:
+      - ./tmp/postgresql:/postgresql
+  web:
+    build: .
+    command: rails server --binding=0.0.0.0 --port=5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/basket
+    links:
+      - database:database

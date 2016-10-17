@@ -1,0 +1,7 @@
+config/*.yml
+vendor/gems/**/*
+tmp/**/*
+/.bundle
+._*
+log/**/*
+*.log
