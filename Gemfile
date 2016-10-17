@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :assets do
   gem 'react_on_rails', '~> 6'
+  gem 'therubyracer'
 end
 
 # Use Redis adapter to run Action Cable in production
