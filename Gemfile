@@ -10,6 +10,12 @@ gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Place all gems for authorization and authentication here
+group :auth do
+  gem 'devise'
+end
+
+# Place all gems with assets here
 group :assets do
   gem 'react_on_rails', '~> 6'
   gem 'therubyracer'
@@ -26,8 +32,10 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-
+  gem 'shoulda'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :development do
