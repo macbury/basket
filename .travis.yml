@@ -8,6 +8,6 @@ services:
 before_install:
   - docker-compose build
   - docker-compose run web bin/setup
-  - docker-compose run rake db:create db:migrate
+  - docker-compose run web rails db:create db:migrate
 script:
   - docker-compose run web bundle exec rspec
