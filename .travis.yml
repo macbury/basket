@@ -6,8 +6,6 @@ services:
   - docker
 
 before_install:
-  - docker-compose build
-  - docker-compose run web bin/setup
-  - docker-compose run web rails db:create db:migrate
+  - bin/docker-setup
 script:
   - docker-compose run web bundle exec rspec

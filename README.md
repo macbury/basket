@@ -6,3 +6,14 @@
 [![Inline docs](http://inch-ci.org/github/macbury/basket.svg?branch=master)](http://inch-ci.org/github/macbury/basket)
 
 Simple todo app
+
+
+## How to run dev
+
+Install docker and docker-compose. Clone this repo and then run command:
+
+`` shell
+bin/docker-setup
+``
+
+Then visit http://0.0.0.0:5000

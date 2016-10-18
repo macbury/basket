@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configure dev container
+
+docker-compose build
+docker-compose run web bin/setup
+docker-compose run rake db:create db:migrate
+docker-compose up
