@@ -12,7 +12,7 @@ Simple todo app
 
 Install docker and docker-compose. Clone this repo and then run command:
 
-`` shell
+`` 
 bin/docker-setup
 ``
 
