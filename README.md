@@ -1,26 +1,8 @@
 # README
 
 [![Build Status](https://travis-ci.org/macbury/basket.svg?branch=master)](https://travis-ci.org/macbury/basket)
+[![Code Climate](https://codeclimate.com/github/macbury/basket/badges/gpa.svg)](https://codeclimate.com/github/macbury/basket)
+[![License](https://img.shields.io/github/license/macbury/basket.svg)](http://opensource.org/licenses/MIT)
+[![Inline docs](http://inch-ci.org/github/macbury/basket.svg?branch=master)](http://inch-ci.org/github/macbury/basket)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Simple todo app
