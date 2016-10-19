@@ -13,7 +13,9 @@ import './body.scss';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import Application from './components/application';
-import Lists from './components/lists';
+import requireAuth from './components/hoc/require_authentication';
+import Lists from './components/page/lists';
+import SignIn from './components/page/sign_in';
 
 window.onload = function() {
   /**
@@ -27,11 +29,12 @@ window.onload = function() {
         <Provider store={store}>
           <Router history={browserHistory}>
             <Route path="/" component={Application}>
-              <IndexRoute component={Lists} />
+              <IndexRoute component={requireAuth(Lists)} />
             </Route>
+            <Route path="/sign_in" component={SignIn} />
           </Router>
         </Provider>
       </MuiThemeProvider>
-    ),appContainer
+    ), appContainer
   );
 }

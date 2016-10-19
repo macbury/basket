@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Header from './header';
+import Header from './layout/header';
 
 class Application extends React.Component {
   render() {
@@ -15,7 +15,6 @@ class Application extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {};
 }
 

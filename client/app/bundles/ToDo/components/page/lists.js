@@ -5,3 +5,5 @@ class Lists extends Component {
     return ( <div>List of todo lists</div> );
   }
 }
+
+export default Lists;
