@@ -38,6 +38,12 @@ group :development, :test do
   gem 'guard-rspec'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'poltergeist'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
