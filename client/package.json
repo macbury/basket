@@ -45,5 +45,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "phantomjs-prebuilt": "^2.1.13"
+  }
 }
