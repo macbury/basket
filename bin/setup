@@ -16,6 +16,9 @@ chdir APP_ROOT do
     cp "config/#{config_file_name}.yml.sample", "config/#{config_file_name}.yml" unless File.exist?("config/#{config_file_name}.yml")
   end
 
+  puts "\n== Installing node modules =="
+  system!("cd client/ && npm install")
+
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
 end

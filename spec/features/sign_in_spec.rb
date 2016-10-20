@@ -18,7 +18,14 @@ feature 'Signing in' do
       fill_in 'Password', with: 'admin1234'
       click_button 'Sign in'
 
-      expect(page).to have_content 'Success'
+      expect(page).to have_content 'Signed in successfully'
+    end
+
+    scenario 'with invalid email or password' do
+      visit '/sign_in'
+      click_button 'Sign in'
+
+      expect(page).to have_content 'Invalid email or password.'
     end
   end
 end

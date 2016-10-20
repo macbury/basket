@@ -14,9 +14,6 @@ RUN gem install bundler --no-ri --no-rdoc
 ADD Gemfile $APP_HOME/
 ADD Gemfile.lock $APP_HOME
 
-ADD client/ $APP_HOME/client
-
-RUN cd client/ && npm install -g
 RUN bundle install --jobs 20
 
 ADD . $APP_HOME
