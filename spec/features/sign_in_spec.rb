@@ -18,7 +18,7 @@ feature 'Signing in' do
       fill_in 'Password', with: 'admin1234'
       click_button 'Sign in'
 
-      #expect(page).to have_content 'Success'
+      expect(page).to have_content 'Success'
     end
   end
 end
