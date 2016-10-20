@@ -42,6 +42,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :development do

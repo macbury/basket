@@ -12,11 +12,13 @@ require 'capybara/poltergeist'
 require 'factory_girl'
 require 'factory_girl_rails'
 require 'database_cleaner'
+require 'phantomjs'
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {
     js_errors: false,
-    window_size: [1920, 1080]
+    window_size: [1920, 1080],
+    phantomjs: Phantomjs.path
   })
 end
 
