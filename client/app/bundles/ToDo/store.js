@@ -5,7 +5,6 @@ import { reducer, initialState } from './reducers'; // Combined reducers
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
-
 /**
 * Middleware configuration goes here
 */

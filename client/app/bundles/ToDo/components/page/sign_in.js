@@ -1,24 +1,54 @@
 import React, { Component } from 'react';
 
-import TextField from 'material-ui/TextField';
+import { connect } from 'react-redux';
+import { reduxForm, Field } from 'redux-form';
+import { renderTextField } from '../helpers/inputs';
+
 import RaisedButton from 'material-ui/RaisedButton';
+import signInStyles from './sign_in.scss';
+
+import { signInAction } from '../../actions/authentication';
 
 /**
-* Show sign in form
+* Form for sign in
 */
-class SignIn extends Component {
+class Form extends Component {
   render() {
+    const onSubmitCallback = this.props.handleSubmit(this.props.onSubmit);
     return (
-      <form>
+      <form className={signInStyles.form} onSubmit={onSubmitCallback}>
         <h1>Sign in</h1>
-        <TextField floatingLabelText="E-Mail" />
+        <Field name="email" component={renderTextField} label="E-Mail" />
         <br />
-        <TextField floatingLabelText="Password" type="password" />
+        <Field name="password" component={renderTextField} label="Password" type="password" />
         <br />
-        <RaisedButton label="Sign in" primary={true} />
+        <RaisedButton label="Sign in" primary={true} onClick={onSubmitCallback} />
       </form>
     );
   }
 }
 
-export default SignIn;
+var SignInForm = reduxForm({
+  form: 'signIn'
+})(Form);
+
+/**
+* Show sign in form
+*/
+class SignInPage extends Component {
+
+  onSubmit({ email, password }) {
+    console.log(this.props);
+    this.props.signInAction({ email, password });
+  }
+
+  render() {
+    return <SignInForm onSubmit={this.onSubmit.bind(this)} />
+  }
+}
+
+function mapStateToProps() {
+  return {};
+}
+
+export default connect(mapStateToProps, { signInAction })(SignInPage);

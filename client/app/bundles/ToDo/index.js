@@ -15,7 +15,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import Application from './components/application';
 import requireAuth from './components/hoc/require_authentication';
 import Lists from './components/page/lists';
-import SignIn from './components/page/sign_in';
+import SignInPage from './components/page/sign_in';
 
 window.onload = function() {
   /**
@@ -31,7 +31,7 @@ window.onload = function() {
             <Route path="/" component={Application}>
               <IndexRoute component={requireAuth(Lists)} />
             </Route>
-            <Route path="/sign_in" component={SignIn} />
+            <Route path="/sign_in" component={SignInPage} />
           </Router>
         </Provider>
       </MuiThemeProvider>
