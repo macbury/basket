@@ -12,16 +12,15 @@ require 'capybara/poltergeist'
 require 'factory_girl'
 require 'factory_girl_rails'
 require 'database_cleaner'
+require 'pry'
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {
     js_errors: false,
     window_size: [1920, 1080],
-    phantomjs: Rails.root.join('client/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs').to_s
   })
 end
 
-Capybara.javascript_driver = :poltergeist
 Capybara.default_driver    = :poltergeist
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }

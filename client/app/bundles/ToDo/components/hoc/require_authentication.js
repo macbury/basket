@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { showFlashMessage } from '../../actions/flash_messages';
 /**
 * This component checks if user is logged in. If he is not then it will redirect to /sign_in path otherwise render child component
 */
@@ -15,6 +15,7 @@ export default function (ComposedComponent) {
     */
     authenticateOrRedirect(props) {
       if (!props.authenticated) {
+        this.props.showFlashMessage('You need to sign in or sign up before continuing.');
         this.context.router.push('/sign_in');
       }
     }
@@ -45,5 +46,5 @@ export default function (ComposedComponent) {
     return { authenticated: state.authenticated }
   }
 
-  return connect(mapStateToProps)(Authentication);
+  return connect(mapStateToProps, { showFlashMessage })(Authentication);
 }

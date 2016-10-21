@@ -36,9 +36,8 @@ var SignInForm = reduxForm({
 * Show sign in form
 */
 class SignInPage extends Component {
-
+  
   onSubmit({ email, password }) {
-    console.log(this.props);
     this.props.signInAction({ email, password });
   }
 

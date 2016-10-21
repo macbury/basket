@@ -30,8 +30,8 @@ window.onload = function() {
           <Router history={browserHistory}>
             <Route path="/" component={Application}>
               <IndexRoute component={requireAuth(Lists)} />
+              <Route path="/sign_in" component={SignInPage} />
             </Route>
-            <Route path="/sign_in" component={SignInPage} />
           </Router>
         </Provider>
       </MuiThemeProvider>

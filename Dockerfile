@@ -11,6 +11,9 @@ WORKDIR /basket
 
 RUN gem install bundler --no-ri --no-rdoc
 
+ADD bin/setup-phantomjs $APP_HOME/bin/setup-phantomjs
+RUN $APP_HOME/bin/setup-phantomjs
+
 ADD Gemfile $APP_HOME/
 ADD Gemfile.lock $APP_HOME
 

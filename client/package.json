@@ -48,6 +48,5 @@
     "webpack": "^1.12.14"
   },
   "devDependencies": {
-    "phantomjs-prebuilt": "^2.1.13"
   }
 }

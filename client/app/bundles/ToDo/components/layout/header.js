@@ -28,7 +28,7 @@ class Header extends Component {
     return <AppBar
       title="Basket"
       iconElementLeft={<div />}
-      iconElementRight={this.authButton()}
+      iconElementRight={<div />}
     />;
   }
 }

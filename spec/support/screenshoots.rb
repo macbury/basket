@@ -33,8 +33,8 @@ module ScreenshotSupport
 
   # Takes screenshot and places it under tmp/rspec/debug.png
   def screenshot!
-    page.save_screenshot(Rails.root.join('tmp/rspec/debug.png'), { full: true })
-    File.open(Rails.root.join('tmp/rspec/page.html'), 'w') do |f|
+    page.save_screenshot(Rails.root.join('tmp/capybara/debug.png'), { full: true })
+    File.open(Rails.root.join('tmp/capybara/page.html'), 'w') do |f|
       f.write(page.body)
     end
   end
