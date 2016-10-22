@@ -16,11 +16,14 @@ require 'pry'
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {
-    js_errors: false,
+    js_errors: true,
     window_size: [1920, 1080],
+    debug: false,
+    inspector: true
   })
 end
 
+Capybara.javascript_driver = :poltergeist
 Capybara.default_driver    = :poltergeist
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
@@ -35,6 +38,7 @@ RSpec.configure do |config|
   config.extend DeviseSupport::Feature, type: :feature
   config.include Warden::Test::Helpers
   config.include FactoryGirl::Syntax::Methods
+  config.include(ScreenshotSupport, type: :feature)
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!

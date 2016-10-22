@@ -1,7 +1,7 @@
 import mirrorCreator from 'mirror-creator';
 
 const actionTypes = mirrorCreator([
-  'CHANGE_AUTH', 'SHOW_FLASH_MESSAGE', 'REMOVE_FLASH_MESSAGE'
+  'CREATE_SESSION', 'RESET_SESSION', 'SHOW_FLASH_MESSAGE', 'REMOVE_FLASH_MESSAGE', 'FETCH_LISTS'
 ]);
 
 export default actionTypes;

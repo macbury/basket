@@ -1,9 +1,11 @@
 import types from '../actions/types';
 
-export default function(state = false, action) {
+export default function(state = null, action) {
   switch (action.type) {
-    case (types.CHANGE_AUTH):
-      return action.payload;
+    case (types.CREATE_SESSION):
+      return true;
+    case (types.RESET_SESSION):
+      return null;
     default:
       return state;
   }

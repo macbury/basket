@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from './store';
 
-injectTapEventPlugin();
-
 import './body.scss';
 
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
@@ -18,6 +16,7 @@ import Lists from './components/page/lists';
 import SignInPage from './components/page/sign_in';
 
 window.onload = function() {
+  injectTapEventPlugin();
   /**
   * Where to insert application in DOM
   **/
@@ -28,9 +27,12 @@ window.onload = function() {
       <MuiThemeProvider>
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Route path="/" component={Application}>
-              <IndexRoute component={requireAuth(Lists)} />
-              <Route path="/sign_in" component={SignInPage} />
+            <Route path="/" component={requireAuth(Application)}>
+              <IndexRoute component={Lists} />
+            </Route>
+
+            <Route path="/users/" component={Application}>
+              <Route path="sign_in" component={SignInPage} />
             </Route>
           </Router>
         </Provider>

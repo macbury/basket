@@ -22,7 +22,7 @@ class Form extends Component {
         <br />
         <Field name="password" component={renderTextField} label="Password" type="password" />
         <br />
-        <RaisedButton label="Sign in" primary={true} onClick={onSubmitCallback} />
+        <RaisedButton label="Sign in" type="submit" primary={true} />
       </form>
     );
   }
@@ -36,7 +36,7 @@ var SignInForm = reduxForm({
 * Show sign in form
 */
 class SignInPage extends Component {
-  
+
   onSubmit({ email, password }) {
     this.props.signInAction({ email, password });
   }
